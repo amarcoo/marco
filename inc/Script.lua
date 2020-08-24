@@ -1211,6 +1211,7 @@ if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'• NAME 𖦹   '..Namei..'     \n• USE 𖥳 '..UserNameID..' .\n• MSG 𖦹 '..msgs..' .\n• STA 𖥳 '..msg.TheRank..' .\n• iD 𖦹 '..msg.sender_user_id_..' .',dl_cb,nil)
 		else
 		Text = redis:get("KLISH:ID")
+		Text = Text:gsub('NAMEGET',Namei)
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
 		Text = Text:gsub('USERGET',UserNameID)
 		Text = Text:gsub('RTBGET',msg.TheRank)
@@ -1226,6 +1227,7 @@ if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 		sendMsg(msg.chat_id_,msg.id_,'• لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n• NAME 𖦹   '..Namei..'     \n• USE 𖥳 '..UserNameID..' .\n• MSG 𖦹 '..msgs..' .\n• STA 𖥳 '..msg.TheRank..' .\n• iD 𖦹 '..msg.sender_user_id_..' .')
 		else
 		Text = redis:get("KLISH:ID")
+		Text = Text:gsub('NAMEGET',Namei)
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
 		Text = Text:gsub('USERGET',UserNameID)
 		Text = Text:gsub('RTBGET',msg.TheRank)
@@ -1240,6 +1242,7 @@ if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 else
 	if redis:get("KLISH:ID") then
 		Text = redis:get("KLISH:ID")
+		Text = Text:gsub('NAMEGET',Namei)									
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
 		Text = Text:gsub('USERGET',UserNameID)
 		Text = Text:gsub('RTBGET',msg.TheRank)
@@ -2950,6 +2953,7 @@ local hasnid= [[
 ¦تستطيع الان تغير كليشه الايدي 
 ---------------------
  •  الايدي •* `IDGET`
+*• الاسم • * `NAMEGET`
 *• رتبتي • * `RTBGET`
 *• المعرف • * `USERGET`
 *• رسائلك • * `MSGGET`
