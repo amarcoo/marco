@@ -3,9 +3,7 @@
 ]]
 
 function download_to_file(url, file_name)
-  -- print to server
-  -- print("url to download: "..url)
-  -- uncomment if needed
+  -- print to server  -- uncomment if needed
   local respbody = {}
   local options = {
     url = url,
@@ -2968,7 +2966,7 @@ return sendMsg(msg.chat_id_,msg.id_,hasnid)
 end
 if Text == "مسح الايدي" and msg.SudoUser then
 redis:del("KLISH:ID")
-sendMsg(msg.chat_id_,msg.id_," Abaza *¦* أهلا عزيزي "..msg.TheRankCmd.."\n *¦* تم  حذف كليشه الايدي \n ")
+sendMsg(msg.chat_id_,msg.id_,"  *¦* أهلا عزيزي "..msg.TheRankCmd.."\n *¦* تم  حذف كليشه الايدي \n ")
 return false  
 end
 if redis:get("CHENG:ID"..msg.chat_id_..""..msg.sender_user_id_) then 
