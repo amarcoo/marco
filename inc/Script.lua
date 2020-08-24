@@ -1208,12 +1208,11 @@ if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 		}
 		ssssys = ali[math.random(#ali)]
 		if not redis:get("KLISH:ID") then
-		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'• NAME 𖦹   '..Namei..'     \n• USE 𖥳 '..UserNameID..' .\n• MSG 𖦹 '..msgs..' .\n• STA 𖥳 '..msg.TheRank..' .\n• iD 𖦹 '..msg.sender_user_id_..' .',dl_cb,nil)
+		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'🙋🏼‍♂️╿'..ssssys..'\n☄│ايديـك ❪ '..msg.sender_user_id_..' ❫\n🎫│معرفـك ❪ '..UserNameID..' ❫\n👮‍♀️│رتبتـك ❪ '..msg.TheRank..' ❫\n🎲│تفاعلك ❪ '..Get_Ttl(msgs)..' ❫\n💬│رسائلك ❪ '..msgs..' ❫\n🚸│سحكاتـك ❪ '..rfih..' ❫\n🐞╽نقاطك ❪ '..nko..' ❫\n💥',dl_cb,nil)
 		else
-		Text = redis:get("KLISH:ID")
-		Text = Text:gsub( NAMEGET ,Namai)
-		Text = Text:gsub('NAMEI',msg.sender_user_id_)
+		Text = redis:get(mark..'idsaied:msg'..msg.chat_id_)
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
+		Text = Text:gsub('NAMEGET',Namei)
 		Text = Text:gsub('USERGET',UserNameID)
 		Text = Text:gsub('RTBGET',msg.TheRank)
 		Text = Text:gsub('TFGET',Get_Ttl(msgs))
@@ -1224,11 +1223,12 @@ if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,"🎇│"..ssssys.."\n"..Text.."",dl_cb,nil)
 		end
 	else
-		if not redis:get("KLISH:ID") then
-		sendMsg(msg.chat_id_,msg.id_,'• لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n• NAME 𖦹   '..Namei..'     \n• USE 𖥳 '..UserNameID..' .\n• MSG 𖦹 '..msgs..' .\n• STA 𖥳 '..msg.TheRank..' .\n• iD 𖦹 '..msg.sender_user_id_..' .')
+		if not redis:get(mark..'idsaied:msg'..msg.chat_id_) then
+		sendMsg(msg.chat_id_,msg.id_,'📬│لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n🎫╿معرفـك ['..UserNameID..']\n🎟│ايديـك ❪ '..msg.sender_user_id_..' ❫\n📡│رتبتـك ❪ '..msg.TheRank..' ❫\n🎲│تفاعلك ❪ '..Get_Ttl(msgs)..' ❫\n💬│رسائلك ❪ '..msgs..' ❫\n🚸│سحكاتـك ❪ '..rfih..' ❫\n📞│الـجـهـات ❪ '..NumGha..' ❫\n🐞╽نقاطك ❪ '..nko..' ❫\n')
 		else
-		Text = redis:get("KLISH:ID")
+		Text = redis:get(mark..'idsaied:msg'..msg.chat_id_)
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
+		Text = Text:gsub('NAMEGET',Namei)
 		Text = Text:gsub('USERGET',UserNameID)
 		Text = Text:gsub('RTBGET',msg.TheRank)
 		Text = Text:gsub('TFGET',Get_Ttl(msgs))
@@ -1240,9 +1240,10 @@ if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 		end
 	end
 else
-	if redis:get("KLISH:ID") then
-		Text = redis:get("KLISH:ID")
+	if redis:get(mark..'idsaied:msg'..msg.chat_id_) then
+		Text = redis:get(mark..'idsaied:msg'..msg.chat_id_)
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
+		Text = Text:gsub('NAMEGET',Namei)
 		Text = Text:gsub('USERGET',UserNameID)
 		Text = Text:gsub('RTBGET',msg.TheRank)
 		Text = Text:gsub('TFGET',Get_Ttl(msgs))
@@ -1252,10 +1253,9 @@ else
 		Text = Text:gsub('User_Points',nko)
 		sendMsg(msg.chat_id_,msg.id_,Flter_Markdown(Text))
 		else
-		sendMsg(msg.chat_id_,msg.id_,'• الايدي بالصوره معطل \n• USE 𖥳 '..UserNameID..' .\n• NAME 𖦹   '..Namei..'     \n• MSG 𖦹 '..msgs..' .\n• STA 𖥳 '..msg.TheRank..' .\n• iD 𖦹 '..msg.sender_user_id_..' .')
+		sendMsg(msg.chat_id_,msg.id_,'📬│الايدي بالصوره معطل \n🎫╿معرفـك ['..UserNameID..']\n🎟│ايديـك ❪ '..msg.sender_user_id_..' ❫\n📡│رتبتـك ❪ '..msg.TheRank..' ❫\n🎲│تفاعلك ❪ '..Get_Ttl(msgs)..' ❫\n💬│رسائلك ❪ '..msgs..' ❫\n🚸│سحكاتـك ❪ '..rfih..' ❫\n📞│الـجـهـات ❪ '..NumGha..' ❫\n🐞╽نقاطك ❪ '..nko..' ❫\n')
 		end
 end
-
 end) 
 end ,nil)
 end
