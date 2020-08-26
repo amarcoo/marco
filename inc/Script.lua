@@ -356,7 +356,7 @@ send_msg(msg.chat_id_,t,msg.id_)
 end,nil)
 end
 
-if (MsgText[1] == "نذار" and is_JoinChannel(msg)) then 
+if (MsgText[1] == "تحذير" and is_JoinChannel(msg)) then 
 if not msg.Admin then return "• ** هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
 return ownerlist(msg) .. GetListAdmin(msg) .. whitelist(msg)
 end
@@ -1204,7 +1204,7 @@ local Namei = FlterName(data.first_name_..' '..(data.last_name_ or ""),20)
 GetPhotoUser(msg.sender_user_id_,function(arg, data)
 if redis:get(mark.."getidstatus"..msg.chat_id_) == "Photo" then
 	if data.photos_[0] then 
-		ali = {'شهل صورة😍😌','لا قيمه للقمر امام وجهك🌚🥀','خليني احبك🙈❤️','ببكن خاص 🌚😹','نكبل 🙈♥','منور اليوم 😻','فديت الحلو🌚😹','شهل عسل ،₍🍯😻⁾ ','كلي يا حلو منين الله جابك🙈❤️','يهلا بلعافيه😍','مارتاحلك😐','تحبني؟🙈',
+		ali = {'ايش الاحراجات هذي😍😌','لا قيمه للقمر امام وجهك🌚🥀','خليني احبك🙈❤️','تعال خاص 🌚😹','هيا نهرب 🙈♥','منور اليوم 😻','فديت الحلو🌚😹','هذا عسل والله ،₍🍯😻⁾ ','من فين هذا القمر🙈❤️','هلا بالقلب حقي😍','حيا بروحي حيا 😍','تحبني؟🙈',
 		}
 		ssssys = ali[math.random(#ali)]
 		if not redis:get("KLISH:ID") then
@@ -4000,9 +4000,9 @@ local su = {
   "ارحب ."}
   local ss97 = {
   "اهلا .","امرني يعيني .",
-  "امرني .","نعم","هاه.","شفيه",
+  "امرني .","نعم","هاه.","ايش فيك",
   "لبييه .","عيوني لك.","امرني يا حلو.",
-  "ها يا روحي.","هلا .","شتبغى.",
+  "ها يا روحي.","هلا .","مافي نفسك ي روحي.",
   "عيون ["..Bot_Name.."] .",
   }
 
@@ -4035,10 +4035,10 @@ return sendMsg(msg.chat_id_,msg.id_,dr[math.random(#dr)])
 elseif not msg.SudoUser and Text==" بوت" or Text == "بوت" then
 return 
 sendMsg(msg.chat_id_,msg.id_,nnn[math.random(#nnn)]) 
-elseif Text== "سونيك" or Text== "محمود ابوالمجد" then return  sendMsg(msg.chat_id_,msg.id_,"[مطور السورس  ♕](https://t.me/UU_IV)")
-elseif Text== "باسل اباظه" or Text== "اباظه" then return  sendMsg(msg.chat_id_,msg.id_,"[مطور السورس  ♕](https://t.me/XB_1B)")
-elseif Text== "عماركو" or Text== "عمار" then return  sendMsg(msg.chat_id_,msg.id_,"[مالك السورس♕](https://t.me/UU_IV)")
-elseif Text== "اغاني" or Text== "الاغاني" then return  sendMsg(msg.chat_id_,msg.id_,"[@YTOOTY_BOT + اسم الاغنية](https://t.me/YTOOTY_BOT)")
+elseif Text== "عماركو" or Text== "عماركو" then return  sendMsg(msg.chat_id_,msg.id_,"[مطور السورس  ♕](https://t.me/XXUUU)")
+elseif Text== "عماركو" or Text== "عماركو" then return  sendMsg(msg.chat_id_,msg.id_,"[مطور السورس  ♕](https://t.me/XXUUU)")
+elseif Text== "عماركو" or Text== "عماركو" then return  sendMsg(msg.chat_id_,msg.id_,"[مالك السورس♕](https://t.me/XXUUU)")
+elseif Text== "اغاني" or Text== "الاغاني" then return  sendMsg(msg.chat_id_,msg.id_,"[@T3allbot + اسم الاغنية](https://t.me/T3allbot)")
 elseif Text== "رفع غبي"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم رفع الغبي بنجاح↯\n• تمت إضافته إلى قائمه الأغبياء\n☆")
 elseif Text== "تنزيل غبي"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم تنزيل الغبي بنجاح↯\n• تمت الزاله من قائمه الأغبياء\n☆")
 elseif Text== "رفع كلب"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم رفع الكلب بنجاح↯\n• تمت إضافته إلى قائمه الكلاب\n☆")
@@ -4056,7 +4056,7 @@ elseif Text== "تنزيل وتكه"  then return sendMsg(msg.chat_id_,msg.id_,"�
 elseif Text== "رفع زوجتي"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم رفع العضو زوجتك↯\nالآن يمكنكم أخذ راحتكم واتفضلو اعملو واحد\n☆")
 elseif Text== "تنزيل زوجتي"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم تنزيل زوجتك بنجاح↯\nالآن انتم مفترقان طلقتها علشان مبتعرفش صح\n☆")
 elseif Text== "زواج"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم زواجكم الاثنين بنجاح↯\n• الآن هي حلالك بلالك\n☆")
-elseif Text== "basel abaza" or Text== "abaza" then return  sendMsg(msg.chat_id_,msg.id_,"[مطور السورس  ♕](https://t.me/XB_0B)")
+elseif Text== "ammarco" or Text== "ammar" then return  sendMsg(msg.chat_id_,msg.id_,"[مطور السورس  ♕](https://t.me/XXUUU)")
 elseif Text== "طلاق"  then return sendMsg(msg.chat_id_,msg.id_,"• أهلاً عزيزي\n• تم طلاق الخاينه بنجاح↯\n• الآن هي مطلقه \n☆")
 elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.id_,"\n‌‌‏┄─┅══┅─┄\n• مرحباً عزيزي\n• هذي اوامر التسليه:  \n┄─┅═ـ═┅─┄\n• رفع ◄► تنزيل ❬ متوحد ❭\n• رفع ◄► تنزيل ❬ وتكه ❭\n• رفع ◄► تنزيل ❬ غبي ❭\n• رفع ◄► تنزيل ❬ كلب ❭\n• رفع ◄► تنزيل ❬ حمار ❭\n• رفع ◄► تنزيل ❬ زوجتي ❭\n• رفع ◄► تنزيل ❬ متوحده ❭\n• رفع ◄► ❬ بقلبي ❭ تنزيل ◄► ❬ من قلبي❭\n• ❬ طلاق ❭ ◄► ❬ زواج ❭\n┄─┅═ـ═┅─┄")
 
@@ -4085,7 +4085,7 @@ return sendMsg(msg.chat_id_,msg.id_,"[انت مدير المجموعه๑](https
 elseif msg.Admin then 
 return sendMsg(msg.chat_id_,msg.id_,"[انت ادمن شد حيلك♘](https://t.me/F888w)")
 else 
-return sendMsg(msg.chat_id_,msg.id_,"[مجرد عضو ذليل𖦹](https://t.me/F888w)")
+return sendMsg(msg.chat_id_,msg.id_,"[مجرد عضو مسكين𖦹](https://t.me/F888w)")
 end 
 end 
 
