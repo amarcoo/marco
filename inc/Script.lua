@@ -2957,7 +2957,7 @@ local hasnid= [[
 *• تفاعلك • * `TFGET`
 *• جهاتك • * `adduser`
 *•مجوهراتك • * `User_Points`
-*•قناتك • * @baselabaza
+*•قناتك • * @ZZZKQ
 
 ]]
 return sendMsg(msg.chat_id_,msg.id_,hasnid) 
