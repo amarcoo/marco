@@ -2507,8 +2507,139 @@ redis:set(hash,info)
 end
 getUser(msg.sender_user_id_,dl_username)
 end
-
 ------set cmd------
+Black = msg.text 
+if Black == 'رفع مشرف كامل' and msg.reply_to_message_id_ ~= 0 then
+
+if not msg.Kara then return "• **هذا الامر يخص {المنشئ الاساسي,المطور,المطور الاساسي} فقط ." end
+
+function setadmins(black,diamond)
+
+if msg.can_promote_members == false then
+
+sendMsg(msg.chat_id_,msg.id_,'• البوت لايمتلك  صلاحية رفع مشرف')
+
+else
+
+res = https.request(ApiToken.."/promoteChatMember?chat_id="..msg.chat_id_.. "&user_id=" ..diamond.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=True")
+
+function name(arg,data)
+
+sendMsg(msg.chat_id_,msg.id_,'• الأسم : ['..data.first_name_..'](tg://user?id='..diamond.sender_user_id_..')\n• تم رفعه مشرف بكامل الصلاحيات\n‏‏')
+
+end
+
+GetUserID(diamond.sender_user_id_,name)
+
+end
+
+end
+
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)},setadmins,nil)
+
+return false
+
+end
+
+
+
+
+if Black == 'رفع مشرف' and msg.reply_to_message_id_ ~= 0 then
+
+if not msg.Kara then return "• **هذا الامر يخص {المنشئ الاساسي,المطور,المطور الاساسي} فقط ." end
+
+function setadmins(black,diamond)
+
+if msg.can_promote_members == false then
+
+sendMsg(msg.chat_id_,msg.id_,'• البوت لايمتلك  صلاحية رفع مشرف')
+
+else
+
+res = https.request(ApiToken.."/promoteChatMember?chat_id="..msg.chat_id_.. "&user_id=" ..diamond.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=false")
+
+function name(arg,data)
+
+sendMsg(msg.chat_id_,msg.id_,'• الأسم : ['..data.first_name_..'](tg://user?id='..diamond.sender_user_id_..')\n• تم رفعه مشرف \n‏')
+
+end
+
+GetUserID(diamond.sender_user_id_,name)
+
+end
+
+end
+
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)},setadmins,nil)
+
+return false
+
+end
+
+
+
+
+if Black == 'تنزيل مشرف' and msg.reply_to_message_id_ ~= 0 then
+
+if not msg.Kara then return "• **هذا الامر يخص {المنشئ الاساسي,المطور,المطور الاساسي} فقط ." end
+
+function remadmins(black,diamond)
+
+if msg.can_promote_members == false then
+
+sendMsg(msg.chat_id_,msg.id_,'• البوت لايمتلك  صلاحية رفع مشرف')
+
+else
+
+res = https.request(ApiToken.."/promoteChatMember?chat_id="..msg.chat_id_.. "&user_id=" ..diamond.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
+
+function name(arg,data)
+
+sendMsg(msg.chat_id_,msg.id_,'• الأسم : ['..data.first_name_..'](tg://user?id='..diamond.sender_user_id_..')\n• تم ازالته من الاشراف\n‏')
+
+end
+
+GetUserID(diamond.sender_user_id_,name)
+
+end
+
+end
+
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)},remadmins,nil)
+
+return false
+
+end
+
+
+
+
+if Black == 'تنزيل مشرف' and msg.reply_to_message_id_ ~= 0 then
+
+if not msg.Kara then return "• **هذا الامر يخص {المنشئ الاساسي,المطور,المطور الاساسي} فقط ." end
+
+function remadmins(black,diamond)
+
+if msg.can_promote_members == false then
+
+sendMsg(msg.chat_id_,msg.id_,'• البوت لايمتلك  صلاحية رفع مشرف')
+
+else
+
+res = https.request(ApiToken.."/promoteChatMember?chat_id="..msg.chat_id_.. "&user_id=" ..diamond.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
+
+function name(arg,data)
+
+sendMsg(msg.chat_id_,msg.id_,'• الأسم : ['..data.first_name_..'](tg://user?id='..diamond.sender_user_id_..')\n• تم إزالته من الاشراف')
+
+end
+
+GetUserID(diamond.sender_user_id_,name)
+
+end
+
+end
+
 Black = msg.text 
 mmd = redis:get(mark..'addcmd'..msg.chat_id_..msg.sender_user_id_)
 if mmd then
